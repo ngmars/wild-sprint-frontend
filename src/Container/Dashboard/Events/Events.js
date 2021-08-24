@@ -1,11 +1,6 @@
-//import Event from '../../../Components/Events/Event';
-//import axios from 'axios';
 import * as actions from "../../../store/Actions/Index";
-import Event from "../../../Components/Events/Event";
 import Spinner from "../../../Components/UI/Spinner/Spinner";
 import { Redirect } from "react-router-dom";
-import Navbar from "../../../Components/Navbar/Navbar";
-import Sidebar from "../../../Components/SideBar/Sidebar";
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import MyEventCard from "./MyEventCard";
@@ -22,23 +17,18 @@ class Events extends Component {
   }
 
   redirectHandler = (event) => {
-    console.log("EVENTTTT", event);
-    //this.props.onFetchOneEvents(event);
+    console.log("EVENT", event);
     localStorage.setItem("eventId", event);
     this.props.history.push("/oneFund");
   };
 
   render() {
-    //let eventsArr = this.props.events.events;
-    //console.log(eventsArr.length,"THIS IS MAIN");
-    let sidebar = <Sidebar role={localStorage.getItem("role")} />;
-    let navbar = <Navbar name={localStorage.getItem("name")} />;
+    
 
     let events = <Spinner />;
     if (!this.props.loading) {
       let eventsArr = this.props.events.events;
       for (let i = 0; i < eventsArr.length; i++) {
-        //console.log(i);
         this.state.eventNameArr.push({
           name: eventsArr[i].name,
           image: eventsArr[i].image,
@@ -69,8 +59,6 @@ class Events extends Component {
 
     return (
       <div>
-        {navbar}
-        {sidebar}
         <div class="fund-pics row">
           <div>{events}</div>
           {TokenExpRedirect}

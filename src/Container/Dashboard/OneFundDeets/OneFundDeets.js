@@ -1,8 +1,6 @@
 import * as actions from '../../../store/Actions/Index';
 import Spinner from '../../../Components/UI/Spinner/Spinner';
 import {Redirect} from 'react-router-dom';
-import Navbar from '../../../Components/Navbar/Navbar';
-import Sidebar from '../../../Components/SideBar/Sidebar';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Tabs, Tab } from 'react-bootstrap'
@@ -91,10 +89,6 @@ class OneFundDeets extends Component {
     }
     
     render(){
-    //let eventsArr = this.props.events.events;
-    //console.log(eventsArr.length,"THIS IS MAIN");
-    let sidebar = <Sidebar role = {localStorage.getItem('role')}/>;
-    let navbar =  <Navbar name ={localStorage.getItem('name')}/>;
     let viewButton =(
         <button class="fund-view-btn" name="btnAddMore" value="DONATE!" href="/dyte" onClick={() => this.redirectViewHandler()}>VIEW LIVE STREAM</button>
     )
@@ -173,15 +167,7 @@ class OneFundDeets extends Component {
     </div>
         
     )
-    
-    /*<OneEvent 
-        name = {name}
-        scientificName = {scfName}
-        habitat = {habitat}
-        description = {description}
-        status = {status}
-        image = {image}
-        />*/
+
     let DonateButton =(
         <button class="fund-edi-btn" name="btnAddMore" value="DONATE!" href="/Donate" onClick={() => this.redirectHandler()}>DONATE</button>
     )
@@ -194,16 +180,12 @@ class OneFundDeets extends Component {
     }
        
         return(
-            <div>
-                {navbar}
-                {sidebar}                
+            <div>         
                 {DonateButton}
                 
                 {oneEvent}
                 
                 {TokenExpRedirect}
-                
-                
             </div>
 
         )

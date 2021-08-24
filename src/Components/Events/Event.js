@@ -1,9 +1,6 @@
-import { render } from '@testing-library/react';
 import React from 'react';
-import classes from './Event.css'
-import axios from 'axios';
+import './Event.css'
 import {withRouter} from 'react-router-dom';
-
 
 const event=(props) =>{
     let name= props.name;

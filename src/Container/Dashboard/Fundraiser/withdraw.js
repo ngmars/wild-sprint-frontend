@@ -2,8 +2,6 @@ import * as actions from '../../../store/Actions/Index';
 import OneEvent from '../../../Components/oneEvent/oneEvent';
 import Spinner from '../../../Components/UI/Spinner/Spinner';
 import {Redirect} from 'react-router-dom';
-import Navbar from '../../../Components/Navbar/Navbar';
-import Sidebar from '../../../Components/SideBar/Sidebar';
 import React, { Component } from 'react';
 import classes from './withdraw.css';
 import { connect } from 'react-redux';
@@ -105,10 +103,6 @@ class WithdrawPage extends Component {
       }
     
     render(){
-    //let eventsArr = this.props.events.events;
-    //console.log(eventsArr.length,"THIS IS MAIN");
-    let sidebar = <Sidebar role = {localStorage.getItem('role')}/>;
-    let navbar =  <Navbar name ={localStorage.getItem('name')}/>;
     
     let oneEvent;
     
@@ -168,9 +162,6 @@ class WithdrawPage extends Component {
        
         return(
             <div>
-                {navbar}
-                {sidebar}                
-                
                 {oneEvent}
                 
                 {TokenExpRedirect}

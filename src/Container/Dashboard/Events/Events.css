@@ -7,15 +7,6 @@ button{
 body{
   background: #fff;
 }
-.sidebar {
-  position: fixed;
-  float: left;
-  width: 210px;
-  height: 100vh;
-  background: #212529;
-  font-size: 18px;
-}
-
 .nav {
   position: relative;
   margin: 0 2%;

@@ -4,8 +4,6 @@ import Spinner from '../../../Components/UI/Spinner/Spinner';
 import {Redirect} from 'react-router-dom';
 import Input from '../../../Components/UI/Input/Input';
 import classes from '../StartFundraiser/StartFundraiser.css'
-import Navbar from '../../../Components/Navbar/Navbar';
-import Sidebar from '../../../Components/SideBar/Sidebar';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import FormData from 'form-data';

@@ -4,8 +4,6 @@ import {Redirect} from 'react-router-dom';
 import Input from '../../../Components/UI/Input/Input';
 import Profile from '../../../Components/Profile/Profile';
 import EditProfile from '../../../Components/Profile/editProfile';
-import Navbar from '../../../Components/Navbar/Navbar';
-import Sidebar from '../../../Components/SideBar/Sidebar';
 import React, { Component } from 'react';
 import { Icon } from '@iconify/react';
 //import cameraRetro from '@iconify/icons-ion/camera';

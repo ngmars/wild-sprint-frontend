@@ -1,11 +1,7 @@
-//import Event from '../../../Components/Events/Event';
-//import axios from 'axios';
 import * as actions from "../../../store/Actions/Index";
-import classes from "./MyBills.css";
+import "./MyBills.css";
 import Spinner from "../../../Components/UI/Spinner/Spinner";
 import { Redirect } from "react-router-dom";
-import Navbar from "../../../Components/Navbar/Navbar";
-import Sidebar from "../../../Components/SideBar/Sidebar";
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
@@ -20,10 +16,6 @@ class MyBills extends Component {
     this.props.onFetchBills(token);
   }
   render() {
-    //let eventsArr = this.props.events.events;
-    //console.log(eventsArr.length,"THIS IS MAIN");
-    let sidebar = <Sidebar role={localStorage.getItem("role")} />;
-    let navbar = <Navbar name={localStorage.getItem("name")} />;
 
     let Bills = <Spinner />;
     let billsArr = this.props.bills;
@@ -32,7 +24,6 @@ class MyBills extends Component {
       console.log("JUST CHECKING", billsArr);
       const len = billsArr.length;
       for (let i = 0; i < len; i++) {
-        //console.log(i);
         this.state.eventNameArr.push({
           billId: billsArr[i]._id,
           amount: billsArr[i].amount,
@@ -70,8 +61,6 @@ class MyBills extends Component {
 
     return (
       <div>
-        {navbar}
-        {sidebar}
         <div class="row bills">
           <h1>ALL BILLS</h1>
           <div className="row">{Bills}</div>

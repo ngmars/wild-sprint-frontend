@@ -3,12 +3,9 @@ import Event from '../../../Components/Events/Event';
 import MyFund from '../../../Components/MyFunds/MyFunds';
 import Spinner from '../../../Components/UI/Spinner/Spinner';
 import {Redirect} from 'react-router-dom';
-import Navbar from '../../../Components/Navbar/Navbar';
-import Sidebar from '../../../Components/SideBar/Sidebar';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import classes from './fundraiser.css';
-import FormData from 'form-data'; 
+import NavbarComp from "../../../Components/NavbarComponent/NavbarComponent"
 import { Button } from 'antd';
 
 class Myfunds extends Component {
@@ -25,8 +22,6 @@ class Myfunds extends Component {
     render(){
     //let eventsArr = this.props.events.events;
     //console.log(eventsArr.length,"THIS IS MAIN");
-    let sidebar = <Sidebar role = {localStorage.getItem('role')}/>;
-    let navbar =  <Navbar name ={localStorage.getItem('name')}/>;
     console.log("THIS PAGE NOEEE",this.props.myFunds)
     let events = <Spinner/>;
     if ( !this.props.loading ) {
@@ -74,9 +69,7 @@ class Myfunds extends Component {
     
         return(
             <div className="myfunds">
-                {navbar}
-                {sidebar}
-                
+                <NavbarComp name={localStorage.getItem("name")} role={localStorage.getItem("role")} item="fundraiser"/>
                 <div class="fund-pics row">
                 
                 <h2 className="yourFund">YOUR FUNDRAISERS</h2>

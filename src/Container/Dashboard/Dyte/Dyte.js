@@ -1,20 +1,16 @@
 import * as actions from '../../../store/Actions/Index';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { DyteMeeting, Meeting , DyteErrors,Participant } from "dyte-client";
-import { connect, useSelector , useDispatch} from 'react-redux';
+import {useSelector , useDispatch} from 'react-redux';
 import { Layout , Button} from 'antd';
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
-
 import { useHistory } from "react-router-dom";
 import axios from 'axios';
-import { Component } from 'react';
 import logoPng from './logo.png';
+
 const { Header, Footer, Sider, Content } = Layout;
 function DyteMeet() {
     const dispatch = useDispatch()
     const history = useHistory();
-    //const [roomDeet,setRoomDeet] = useState({});
-    //const [roomName,setRoomName] = useState(null);
     const [participantId, setParticipantId] = useState(null);
     let oneEvent = useSelector(state=>state.oneEvent.events)
     let roomName = useSelector(state=>state.oneEvent.events.meetingName);
@@ -183,18 +179,11 @@ if(roomName!==null && participantId !==null){
     )
 }
     return (
-   
-      
-   
       <Layout>
         <Content>{DyteComponent}</Content>
         <Sider width="26.5vw">{rightBar}</Sider>
       </Layout>
-
-   
-            
-
-        );
+    );
 }
 
 

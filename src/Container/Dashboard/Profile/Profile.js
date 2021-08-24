@@ -5,8 +5,6 @@ import {Redirect} from 'react-router-dom';
 import Input from '../../../Components/UI/Input/Input';
 import Profile from '../../../Components/Profile/Profile';
 import EditProfile from '../../../Components/Profile/editProfile';
-import Navbar from '../../../Components/Navbar/Navbar';
-import Sidebar from '../../../Components/SideBar/Sidebar';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import FormData from 'form-data';
@@ -103,8 +101,6 @@ class ProfileDisp extends Component{
         let image = this.props.image;
         let imageUrl= 'http://localhost:3001/'+image;
         console.log(image);
-        let sidebar = <Sidebar role = {localStorage.getItem('role')}/>;
-        let navbar =  <Navbar name ={localStorage.getItem('name')}/>;
         let isAuth
          if(!localStorage.getItem('token')){
             return (
@@ -187,24 +183,21 @@ class ProfileDisp extends Component{
 
 
 
-            let stateButton ;
-              if (!this.state.isEditing){ 
-            stateButton =( <input onClick={this.switchEditHandler}type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>)}
-            else{
-                stateButton =( <input onClick={this.onFileUpload}type="submit" class="profile-edit-btn" name="btnAddMore" value="Submit"/>)}
+        let stateButton ;
+            if (!this.state.isEditing){ 
+        stateButton =( <input onClick={this.switchEditHandler}type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>)}
+        else{
+            stateButton =( <input onClick={this.onFileUpload}type="submit" class="profile-edit-btn" name="btnAddMore" value="Submit"/>)}
             
-        console.log('just the name,Im main',this.props.name)
-        return(
-        <div>
-            {navbar}
-            {sidebar}
-            {profile}
-            {stateButton}
+        console.log('just the name, Im main',this.props.name)
 
-            {isAuth}
-        </div> 
-            
-            )
+        return(
+            <div>
+                {profile}
+                {stateButton}
+                {isAuth}
+            </div>             
+        )
         
     }
     

@@ -1,14 +1,9 @@
-import Navbar from "../../../Components/Navbar/Navbar";
-import Sidebar from "../../../Components/SideBar/Sidebar";
 import React, { Component } from "react";
-
-import classes from "./Gallery.css";
 import GalleryComp from "react-grid-gallery";
+import "./Gallery.css";
 
 class Gallery extends Component {
   render() {
-    let sidebar = <Sidebar role={localStorage.getItem("role")} />;
-    let navbar = <Navbar name={localStorage.getItem("name")} />;
     let RenGallery;
     RenGallery = (
       <div className="photo-gallery">
@@ -177,10 +172,7 @@ class Gallery extends Component {
     ];
     return (
       <div>
-      {navbar}
-      {sidebar}
-      <div className="galComp"><GalleryComp images={IMAGES}/></div>
-        
+        <div className="galComp"><GalleryComp images={IMAGES}/></div>        
       </div>
     );
   }

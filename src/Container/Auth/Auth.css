@@ -8,7 +8,6 @@
   
   .logindark form {
     width: 320px;
-
     padding: 40px;
     border-radius: 4px;
     transform: translate(-50%, -50%);
@@ -23,7 +22,7 @@
     text-align: center;
     padding: 15px 0 20px;
     font-size: 15vh;
-    color: #2980ef;
+    color: #ff872f;
   }
   
   .logindark form .formcontrol {
@@ -31,12 +30,12 @@
       margin-bottom: 1vh;
       background: none;
       border: none;
-      border-bottom: 2px solid #434a52;
+      border-bottom: 1px solid #434a52;
       border-radius: 0;
       box-shadow: none;
       outline: none;
       color: inherit;
-      font-size: 2vh;
+      font-size: 2.5vh;
       width:80%;
       color: black;
   }
@@ -58,38 +57,21 @@
   }
   
   .logindark form .SignIn-button:hover, .logindark form .SignIn-button:active {
-    background: #214a80;
+    background: #9c4a0f;
     outline: none;
   }
   
   .logindark form .forgot {
     display: block;
     text-align: center;
-    font-size: 1.35vh;
+    font-size: 1.75vh;
     color: #6f7a85;
-    opacity: 0.9;
     text-decoration: none;
-  }
-  .forgot-btn{
-
-    text-align: center;
-    font-size: 1.35vh;
-    color: #6f7a85;
-    opacity: 0.9;
-    text-decoration: none;
-    border-color: none;
-    padding: 0;
-    border: none;
-    outline: none;
-    background: none;
-  }
-  .forgot-btn:hover{
-    color: #214a80;
   }
   
   .logindark form .forgot:hover, .logindark form .forgot:active {
-    opacity: 1;
-    text-decoration: none;
+    color: black;
+    font-weight: bold;
   }
   
   .logindark form .SignIn-button:active {
