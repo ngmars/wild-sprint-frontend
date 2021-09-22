@@ -9,14 +9,17 @@ class Logout extends Component {
     }
     render(){
         return (
-         <Redirect to ='/login'/>
+            <div>
+                {window.localStorage.clear()}        
+                <Redirect to ='/login'/>
+            </div>           
         )
     }
 }
 
-const mapDispatchToProps =dispatch=>{
+const mapDispatchToProps = dispatch =>{
     return {
-        onLogout: ()=>dispatch(actions.logout())
+        onLogout: ()=> dispatch(actions.logout())
     };
 }
 export default connect(null,mapDispatchToProps)(Logout) ;

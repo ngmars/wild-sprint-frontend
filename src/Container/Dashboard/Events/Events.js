@@ -1,30 +1,23 @@
-import * as actions from "../../../store/Actions/Index";
-import Spinner from "../../../Components/UI/Spinner/Spinner";
-import { Redirect } from "react-router-dom";
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import MyEventCard from "./MyEventCard";
+import EventCard from '../../../Components/EventCard/EventCard';
+import * as actions from "../../../store/Actions/Index";
+import Spinner from "../../../Components/UI/Spinner/Spinner";
+import './Events.css';
 
 class Events extends Component {
   state = {
     eventNameArr: [],
     changeFundId: null,
   };
+
   componentDidMount() {
     let token = localStorage.getItem("token");
-
     this.props.onFetchEvents(token);
   }
 
-  redirectHandler = (event) => {
-    console.log("EVENT", event);
-    localStorage.setItem("eventId", event);
-    this.props.history.push("/oneFund");
-  };
-
   render() {
     
-
     let events = <Spinner />;
     if (!this.props.loading) {
       let eventsArr = this.props.events.events;
@@ -39,30 +32,25 @@ class Events extends Component {
       }
 
       events = this.state.eventNameArr.map((event) => (
-        <button
-          name="componentButton"
-          value={event}
-          onClick={() => this.redirectHandler(event.fundId)}
+        <div          
+          value={event}          
         >
-          <MyEventCard
+          <EventCard
             name={event.name}
             image={event.image}
             scfname={event.scfname}
+            fundId ={event.fundId}
           />
-        </button>
+        </div>
       ));
-    }
-    let TokenExpRedirect = null;
-    if (!localStorage.getItem("token")) {
-      TokenExpRedirect = <Redirect to="/" />;
     }
 
     return (
       <div>
-        <div class="fund-pics row">
-          <div>{events}</div>
-          {TokenExpRedirect}
-        </div>
+        <div className="intro">
+          <h4 className="title-1 hover-underline-animation"> Ongoing Events </h4>
+        </div>        
+        <div className="event-grid">{events}</div>
       </div>
     );
   }

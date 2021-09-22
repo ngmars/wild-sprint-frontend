@@ -4,8 +4,7 @@ import "./Gallery.css";
 
 class Gallery extends Component {
   render() {
-    let RenGallery;
-    RenGallery = (
+    let RenGallery = (
       <div className="photo-gallery">
         <div className="intro">
           <h2 className="text-center">Wildsprint Gallery</h2>
@@ -170,6 +169,7 @@ class Gallery extends Component {
         caption: "After Rain (Jeshu John - designerspics.com)",
       },
     ];
+
     return (
       <div>
         <div className="galComp"><GalleryComp images={IMAGES}/></div>        

@@ -1,5 +1,4 @@
 import * as actions from '../../../store/Actions/Index';
-import Event from '../../../Components/Events/Event';
 import MyFund from '../../../Components/MyFunds/MyFunds';
 import Spinner from '../../../Components/UI/Spinner/Spinner';
 import {Redirect} from 'react-router-dom';

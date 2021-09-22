@@ -19,26 +19,28 @@ import NavbarComponent from './Components/NavbarComponent/NavbarComponent';
 const App = ({ location }) => {
 
     return (
-      <div className="App">
+      <div className="App">    
+        {location.pathname !== '/login' && <NavbarComponent/>}  
 
-        {location.pathname !== '/login' &&  <NavbarComponent role={localStorage.getItem("role")} name={localStorage.getItem("name")} />}
-        
         <Switch>
-          <Route exact path="/" render={() => <Redirect to="/login" />} />
-          <Route exact path="/login" component={Auth}/>
-          <Route exact path="/events" component={Events}/>
-          <Route exact path="/logout" component={Logout}/>
-          <Route exact path="/profile" component={ProfileDisp}/>
-          <Route exact path="/fund" component={MyFund}/>
-          <Route exact path="/startfund" component={CreateFundraiser}/>
-          <Route exact path="/onefund" component={OneFundDeets}/>
-          <Route exact path="/donate" component={DonateEvent}/>
-          <Route exact path="/mybills" component={MyBills}/>
-          <Route exact path="/gallery" component={Gallery}/>
-          <Route exact path="/dyte" component={DyteMeet}/>
-          <Route exact path="/blockchain" component={BlockChain}/>
-          <Route exact path="/withdraw" component={WithdrawPage}/>
-        </Switch> 
+        <Route exact path="/" render={() => <Redirect to="/login"/>} />
+        <Route exact path="/login" component={Auth}/>
+        <Route exact path="/events" component={Events}/>
+        <Route exact path="/mybills" component={MyBills}/>
+        <Route exact path="/gallery" component={Gallery}/>
+          
+        <Route exact path="/logout" component={Logout}/>
+        <Route exact path="/profile" component={ProfileDisp}/>
+        <Route exact path="/fund" component={MyFund}/>
+        <Route exact path="/startfund" component={CreateFundraiser}/>
+        <Route exact path="/onefund" component={OneFundDeets}/>
+        <Route exact path="/donate" component={DonateEvent}/>
+        
+        
+        <Route exact path="/dyte" component={DyteMeet}/>
+        <Route exact path="/blockchain" component={BlockChain}/>
+        <Route exact path="/withdraw" component={WithdrawPage}/>
+        </Switch>
       </div>
     );
 }
