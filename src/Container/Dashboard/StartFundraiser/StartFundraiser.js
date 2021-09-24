@@ -1,9 +1,5 @@
 import * as actions from '../../../store/Actions/Index';
-import Spinner from '../../../Components/UI/Spinner/Spinner';
 import {Redirect} from 'react-router-dom';
-import Input from '../../../Components/UI/Input/Input';
-import Profile from '../../../Components/Profile/Profile';
-import EditProfile from '../../../Components/Profile/editProfile';
 import React, { Component } from 'react';
 import { Icon } from '@iconify/react';
 //import cameraRetro from '@iconify/icons-ion/camera';
@@ -118,18 +114,14 @@ onFileUpload = () => {
        )
 
         return(
-            <div className ="body">
-            <div className='signup-container'>
-            <div className='left-container'>
-              <h1>WILDSPRINT</h1>
-              <div >
-              <img src={require("./logo.png")}alt="logo" class="logo2"></img>
+            <div className='body signup-container'>
+              <div className='left-container'>
+                <h1>WILDSPRINT</h1>
+                <img src='/logo.png' alt="logo" className="logo-2"/>
               </div>
-            </div>
       
             <div className='right-container'>
-              <header>
-      
+              <header>      
                 <h1> Take action towards saving the future!</h1><br/>
       
                 <div className='set'>
@@ -243,7 +235,6 @@ onFileUpload = () => {
               </div>
       
             </div>
-          </div> 
           </div>     
         )
     }

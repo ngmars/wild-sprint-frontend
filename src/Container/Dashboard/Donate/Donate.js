@@ -1,17 +1,9 @@
-import * as actions from '../../../store/Actions/Index';
 import axios from 'axios';
-import Spinner from '../../../Components/UI/Spinner/Spinner';
-import {Redirect} from 'react-router-dom';
-import Input from '../../../Components/UI/Input/Input';
-import classes from '../StartFundraiser/StartFundraiser.css'
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import FormData from 'form-data';
-
-import { Tabs, Tab } from 'react-bootstrap'
 import dBank from '../../../abis/dBank.json'
 import Token from '../../../abis/Token.json'
 import Web3 from 'web3';
+import './Donate.css';
 
 class EventDonate extends Component{
     state={
@@ -138,78 +130,61 @@ class EventDonate extends Component{
      
     render(){
         let fundId = localStorage.getItem('eventId')
-        let DonateForm;
-        DonateForm=(
-    <div className="body">
-        <div className='signup-container'>
-            <div className='left-container'>
-              <h1>
-                WILDSPRINT
-              </h1>
-              <div>
-                <img src={require("./logo.png")}alt="logo" className="logo"/>
-              </div>
-            </div>
-            <div className='right-container'>
-                <div className="header">
-                    <h1> Step up towards saving the future!</h1><br/>
+
+        return(
+            <div className="body">
+              <div className='signup-container'>
+                <div className='left-container'>
+                  <img src='/logo.png' alt="logo" className="logo-1"/>
+                </div>
+                <div className='right-container'>
+                    <div className="header">
+                        <h2> Thank you for stepping up today!</h2>
+                    </div>
+
                     <div className='set'>
                         <div className='pets-breed'>
                             <label for='pets-breed'>Fundraiser Name</label>
                             <p><strong>Their horns, their lives</strong></p>
                         </div>
                     </div>
-                    
-                        
+                                                
                     <div className='set'>
                         <div className='pets-breed'>
                             <label for='pets-breed'>Fundraiser ID</label>
                             <p><strong>{fundId }</strong></p>
                         </div>
                     </div>
-             
-                    
+                                    
                     <div className='set'>
                         <div className='pets-breed'>
                             <label for='pets-breed'>Account ID</label>
                             <p><strong>{this.state.account0}</strong></p>
                         </div>
                     </div>
-                </div>
+                    
                     <div className='set'>
-                        <div className='pets-breed'>
-                            <label for='pets-breed'>Amount</label>
-                            <input
-                                    id='pets-name'
-                                    className='pets-input'
-                                    placeholder="Amount"
-                                    step="0.01"
-                                    type='text'
-                                    name='amount'
-                                    value={this.state.amount}
-                                    onChange={event => this.handleChange(event)}/>
-                        </div>
-                        {this.error}
+                      <div className='pets-breed'>
+                          <label for='pets-breed'>Amount</label>
+                          <input
+                                  placeholder="Amount"
+                                  name='amount'
+                                  value={this.state.amount}
+                                  onChange={event => this.handleChange(event)}/>
+                      </div>
+                      {this.error}
                     </div>
 
                     <div className="footer">
                         <div className='set'>
                         <button className='back'>Back</button>
-                        <button className='next' onClick={this.onFileUpload}>DONATE</button>
-                        
-                        </div>
+                        <button className='next' onClick={this.onFileUpload}>DONATE</button>                        
                     </div>
-            
-            </div>    
-            
-        </div>
-    </div>
-    
-    )
-        return(
-            <div>
-            {DonateForm}
+
+                  </div>            
+                </div>                
             </div>
+        </div>
         )
     }
 }

@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import dBank from '../../../abis/dBank.json'
 import Token from '../../../abis/Token.json'
 import Web3 from 'web3';
-import logoPng from './logo.png'
 class WithdrawPage extends Component {
     
     async componentWillMount() {
@@ -111,7 +110,7 @@ class WithdrawPage extends Component {
             <table>        
                 <tr>
                 <td class="colm">
-                    <img src={logoPng} alt="" class="profilepic"/>
+                    <img src='/logo.png' alt="" class="profilepic"/>
                 </td> 
                     <td class="fund-colm">
                         <h5 class="titlename">Withdrawal Page</h5>           

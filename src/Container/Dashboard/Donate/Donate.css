@@ -1,7 +1,7 @@
 
 .body {
   align-items: center;
-  background: linear-gradient(-60deg, #be6b2f 0%, #42daac 120%, #71a8aa 100%)fixed;
+  background: linear-gradient(-60deg, #ff872f 0%, #42daac 120%, #71a8aa 100%)fixed;
   color: rgba(0, 0, 0, 0.8);
   display: grid;
   font-family: "Montserrat", sans-serif;
@@ -13,9 +13,10 @@
 }
 
 .signup-container {
+  padding-top: 10vh;
   display: grid;
   grid-template-areas: "left right";
-  max-width: 900px;
+  max-width: 80vw;
 }
 
 .left-container {
@@ -25,20 +26,6 @@
   position: relative;
   text-align: center;
   width: 300px;
-}
-.left-container h1 {
-  color: rgba(0, 0, 0, 0.8);
-  display: inline-block;
-  font-size: 24px;
-}
-.left-container h1 i {
-  background: #F7B1AB;
-  border-radius: 50%;
-  color: #807182;
-  font-size: 24px;
-  margin-right: 5px;
-  padding: 10px;
-  transform: rotate(-45deg);
 }
 
 .right-container {
@@ -73,36 +60,18 @@
 .right-container header {
   padding: 40px;
 }
-.right-container label, .right-container input, .right-container .pets-photo {
-  width: 176px;
+
+.right-container .header h2{
+  font-family: 'Trocchi', serif;
+  margin: 1em;
 }
-.right-container .pets-photo {
-  align-items: center;
-  display: grid;
-  grid-template-areas: ". .";
-}
-.right-container .pets-photo button {
-  border: none;
-  border-radius: 50%;
-  height: 38px;
-  margin-right: 10px;
-  outline: none;
-  width: 38px;
-}
-.right-container .pets-photo button i {
-  color: rgba(0, 0, 0, 0.8);
-  font-size: 16px;
-}
-.right-container .pets-weight .radio-container {
-  display: flex;
-  justify-content: space-between;
-  width: 500px;
-}
+
 .right-container .footer {
   align-items: center;
   background: #8a8a8a;
   display: grid;
   padding: 5px 40px;
+  margin-top: 2em;
 }
 .right-container .footer button {
   border: 1px solid rgba(0, 0, 0, 0.2);
@@ -134,20 +103,15 @@
   background: #171A2B;
 }
 
-.pets-name label, .pets-breed label, .pets-gender label, .pets-spayed-neutered label, .pets-weight label {
-  display: block;
-  text-align: left;
-}
-
-.logo2{
-  padding-top:50%;
+.logo-1{
+  margin-top: 30%;
   max-width: 20em;
 }
 
-  .set{
-  padding: 0.5em;
+.pets-breed{
+  text-align: left;
 }
 
-.pets-input{
-  display: block;
+.set{
+  margin-left: 1em;
 }
