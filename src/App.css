@@ -1,3 +1,9 @@
+html{
+  background-color: #e3eee2;
+}
+body{
+  background-color: #e3eee2!important;
+}
 .App {
     background: #e3eee2;
     text-align: center;
