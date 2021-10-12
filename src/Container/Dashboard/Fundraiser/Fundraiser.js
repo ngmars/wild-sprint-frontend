@@ -1,11 +1,10 @@
 import * as actions from '../../../store/Actions/Index';
-import MyFund from '../../../Components/MyFunds/MyFunds';
+import MyFunds from '../../../Components/MyFunds/MyFunds';
 import Spinner from '../../../Components/UI/Spinner/Spinner';
 import {Redirect} from 'react-router-dom';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import NavbarComp from "../../../Components/NavbarComponent/NavbarComponent"
-import { Button } from 'antd';
+import './Fundraiser.css';
 
 class Myfunds extends Component {
     state={
@@ -22,6 +21,7 @@ class Myfunds extends Component {
     //let eventsArr = this.props.events.events;
     //console.log(eventsArr.length,"THIS IS MAIN");
     console.log("THIS PAGE NOEEE",this.props.myFunds)
+
     let events = <Spinner/>;
     if ( !this.props.loading ) {
         let myFundsArr= this.props.myFunds;
@@ -40,11 +40,10 @@ class Myfunds extends Component {
         }
     
     events = this.state.eventNameArr.map( event => (
-     //console.log("NOOB",event.name),
-        <MyFund
+        <MyFunds
          name={event.name}
          image={event.image}
-         scfname={event.scfname}
+         fundId={event.fundId}
            />
         ))
     }
@@ -54,31 +53,28 @@ class Myfunds extends Component {
     }
 
     let buttonStartFundraiser =(
-        <Button href="/StartFundForm" type="primary" block>
+        <button className="event-btn funds-btn" href="/StartFundForm">
         START FUNDRAISER
-    </Button>
+    </button>
     )
     let buttonWithdraw =(
-        <Button href="/withdraw" type="primary" block>
+        <button className="event-btn funds-btn" href="/withdraw">
         WITHDRAW FUNDS
-    </Button>
+    </button>
     )
        
 
     
         return(
-            <div className="myfunds">
-                <NavbarComp name={localStorage.getItem("name")} role={localStorage.getItem("role")} item="fundraiser"/>
-                <div class="fund-pics row">
-                
-                <h2 className="yourFund">YOUR FUNDRAISERS</h2>
-                {buttonStartFundraiser}<br/><br/>{buttonWithdraw}<br/><br/><br/><br/>
-                <div className="row">{events}</div>
-                {TokenExpRedirect}
-                </div>
-                
-            </div>
-
+        <>
+            <div className="intro" style={{display:"block"}}>
+                <h2 className="title-1 hover-underline-animation">FUNDRAISERS</h2>               
+            </div>  
+            {buttonStartFundraiser}
+            {buttonWithdraw}
+            <div className="event-grid">{events}</div>
+            {TokenExpRedirect}   
+        </> 
         )
     }
 }

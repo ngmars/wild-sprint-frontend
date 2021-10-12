@@ -1,33 +1,30 @@
 import React from "react";
-import { Card } from "antd";
-import "./MyFunds.css"
+import { useHistory } from 'react-router-dom';
+import "./MyFunds.css";
 
-const { Meta } = Card;
-
-const myFunds = (props) => {
+export default function MyFunds(props) {
   let name = props.name;
   let image = props.image;
-  let scfname =  props.scfname;
+  let fundId = props.fundId;
   let imageUrl = "http://localhost:3001/" + image;
+  let history = useHistory();
 
-  console.log(imageUrl);
+  const redirectHandler = (event) => {
+    localStorage.setItem("eventId", event);
+    history.push('/oneFund')
+  };
+
   return (
-
-    <div className="card-fund-img col-md-3  col-lg-4 col-xl-3">
-      <Card
-        hoverable
-        style={{ width: 240 }}
-        cover={
-          <img
-            alt="example"
-            src={imageUrl}
-          />
-        }
-      >
-        <Meta title={scfname} description={name}/>
-      </Card>
+    <div class='event-card'>
+      <div class='event-box'>
+        <img className="event-poster" src={imageUrl} />
+        <div class='event-text'>
+          <h6> {name} </h6>
+          <button
+          className="event-btn"
+          onClick= {() => redirectHandler(fundId)}>Learn More</button>
+        </div>
+      </div>
     </div>
   );
 };
-
-export default myFunds;

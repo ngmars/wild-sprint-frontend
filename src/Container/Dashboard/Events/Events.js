@@ -38,7 +38,6 @@ class Events extends Component {
           <EventCard
             name={event.name}
             image={event.image}
-            scfname={event.scfname}
             fundId ={event.fundId}
           />
         </div>

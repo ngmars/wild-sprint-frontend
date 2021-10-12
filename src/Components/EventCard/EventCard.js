@@ -6,7 +6,6 @@ export default function EventCard(props) {
   let name = props.name;
   let image = props.image;
   let fundId = props.fundId;
-  let scfname =  props.scfname;
   let imageUrl = "http://localhost:3001/" + image;
   let history = useHistory()
 
