@@ -74,7 +74,6 @@ class Gallery extends Component {
         thumbnailWidth: 320,
         thumbnailHeight: 174,
         isSelected: true,
-        caption: "After Rain (Jeshu John - designerspics.com)",
       },
       {
         src: require("./galleryimg/proj-2.jpg"),
@@ -82,7 +81,6 @@ class Gallery extends Component {
         require("./galleryimg/proj-2.jpg"),
         thumbnailWidth: 320,
         isSelected: true,
-        caption: "After Rain (Jeshu John - designerspics.com)",
       },
       {
         src: require("./galleryimg/proj-3.jpg"),
@@ -91,7 +89,6 @@ class Gallery extends Component {
         thumbnailWidth: 320,
         thumbnailHeight: 230,
         isSelected: true,
-        caption: "After Rain (Jeshu John - designerspics.com)",
       },{
         src: require("./galleryimg/proj-4.jpg"),
         thumbnail:
@@ -99,7 +96,6 @@ class Gallery extends Component {
         thumbnailWidth: 320,
         thumbnailHeight: 174,
         isSelected: true,
-        caption: "After Rain (Jeshu John - designerspics.com)",
       },
       {
         src: require("./galleryimg/proj-5.jpg"),
@@ -107,7 +103,6 @@ class Gallery extends Component {
         require("./galleryimg/proj-5.jpg"),
         thumbnailWidth: 320,
         isSelected: true,
-        caption: "After Rain (Jeshu John - designerspics.com)",
       },
       {
         src: require("./galleryimg/proj-6.jpg"),
@@ -116,7 +111,6 @@ class Gallery extends Component {
         thumbnailWidth: 320,
         thumbnailHeight: 230,
         isSelected: true,
-        caption: "After Rain (Jeshu John - designerspics.com)",
       },{
         src: require("./galleryimg/proj-7.jpeg"),
         thumbnail:
@@ -124,7 +118,6 @@ class Gallery extends Component {
         thumbnailWidth: 320,
         thumbnailHeight: 174,
         isSelected: true,
-        caption: "After Rain (Jeshu John - designerspics.com)",
       },
       {
         src: require("./galleryimg/proj-8.jpeg"),
@@ -132,7 +125,6 @@ class Gallery extends Component {
         require("./galleryimg/proj-8.jpeg"),
         thumbnailWidth: 320,
         isSelected: true,
-        caption: "After Rain (Jeshu John - designerspics.com)",
       },
       {
         src: require("./galleryimg/proj-9.jpeg"),
@@ -141,7 +133,6 @@ class Gallery extends Component {
         thumbnailWidth: 320,
         thumbnailHeight: 230,
         isSelected: true,
-        caption: "After Rain (Jeshu John - designerspics.com)",
       },{
         src: require("./galleryimg/proj-10.jpeg"),
         thumbnail:
@@ -149,7 +140,6 @@ class Gallery extends Component {
         thumbnailWidth: 320,
         thumbnailHeight: 174,
         isSelected: true,
-        caption: "After Rain (Jeshu John - designerspics.com)",
       },
       {
         src: require("./galleryimg/proj-11.jpeg"),
@@ -157,7 +147,6 @@ class Gallery extends Component {
         require("./galleryimg/proj-11.jpeg"),
         thumbnailWidth: 320,
         isSelected: true,
-        caption: "After Rain (Jeshu John - designerspics.com)",
       },
       {
         src: require("./galleryimg/proj-12.jpeg"),
@@ -166,14 +155,11 @@ class Gallery extends Component {
         thumbnailWidth: 320,
         thumbnailHeight: 230,
         isSelected: true,
-        caption: "After Rain (Jeshu John - designerspics.com)",
       },
     ];
 
     return (
-      <div>
-        <div className="galComp"><GalleryComp images={IMAGES}/></div>        
-      </div>
+      <div className="galComp"><GalleryComp images={IMAGES}/></div>
     );
   }
 }

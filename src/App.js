@@ -20,7 +20,7 @@ const App = ({ location }) => {
 
     return (
       <div className="App">    
-        {location.pathname !== '/login' && <NavbarComponent/>}  
+        {location.pathname !== '/login' && location.pathname !== '/Dyte' && <NavbarComponent/>}  
 
         <Switch>
         <Route exact path="/" render={() => <Redirect to="/login"/>} />

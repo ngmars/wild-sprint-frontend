@@ -2,7 +2,7 @@ import * as actions from '../../../store/Actions/Index';
 import React, { useEffect, useState } from 'react';
 import { DyteMeeting, Meeting , DyteErrors,Participant } from "dyte-client";
 import {useSelector , useDispatch} from 'react-redux';
-import { Layout , Button} from 'antd';
+import { Layout } from 'antd';
 import { useHistory } from "react-router-dom";
 import axios from 'axios';
 import logoPng from './logo.png';
@@ -128,8 +128,8 @@ fetch(url2, options)
             <h3 style={{fontSize:"1.5vw",color: "white", marginLeft:"1.25vw",marginRight:"1.25vw",marginTop:'3vh'}}><strong>Fund Name:</strong> {oneEvent.name}</h3>
             <h3 style={{fontSize:"1.5vw",color: "white", marginLeft:"1.25vw",marginRight:"1.25vw",marginTop:'3vh'}}><strong>Species Name:</strong> {oneEvent.scfname}</h3>
             <h3 style={{fontSize:"1.5vw",color: "white", marginLeft:"1.25vw",marginRight:"1.25vw",marginTop:'3vh'}}><strong>Habitat:</strong> {oneEvent.habitat}</h3><br/><br/><br/>
-            <Button style={{borderRadius:"15px",fontSize:"1.5vw",backgroundColor:"#ff872f",borderColor:"#ff872f", paddingBottom:"10px",paddingTop:"10px",height:"6vh",width:"6.25vw",float:"left",marginLeft:"5vw"}} onClick={redirectBackHandle}type="primary">Back</Button>
-            <Button style={{borderRadius:"15px",fontSize:"1.5vw",backgroundColor:"#ff872f",borderColor:"#ff872f",paddingBottom:"10px",paddingTop:"10px",height:"6vh",width:"6.25vw",float:"right",marginRight:"5vw"}}  onClick={redirectDonateHandle} type="primary">Donate</Button>
+            <button className="event-btn" style={{margin: '1em'}} onClick={redirectBackHandle}>BACK</button>
+            <button className="event-btn"  style={{margin: '1em'}} onClick={redirectDonateHandle}>DONATE</button>
         </div>
     )
 if(roomName!==null && participantId !==null){

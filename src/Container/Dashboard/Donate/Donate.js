@@ -145,14 +145,14 @@ class EventDonate extends Component{
                     <div className='set'>
                         <div className='pets-breed'>
                             <label for='pets-breed'>Fundraiser Name</label>
-                            <p><strong>Their horns, their lives</strong></p>
+                            <p><strong>The Anti-Poaching Rhinoceros Fund</strong></p>
                         </div>
                     </div>
                                                 
                     <div className='set'>
                         <div className='pets-breed'>
                             <label for='pets-breed'>Fundraiser ID</label>
-                            <p><strong>{fundId }</strong></p>
+                            <p><strong>{fundId}</strong></p>
                         </div>
                     </div>
                                     
