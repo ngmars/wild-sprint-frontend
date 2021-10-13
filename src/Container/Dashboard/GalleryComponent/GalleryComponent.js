@@ -83,7 +83,8 @@ class GalleryComponent extends Component {
     <div className="gal-comp">
       <Gallery 
       images={IMAGES}
-      rowHeight='250'/>
+      rowHeight={250}
+      enableImageSelection={false}/>
     </div>        
     )
   }  
