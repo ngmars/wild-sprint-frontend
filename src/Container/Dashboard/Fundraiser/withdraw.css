@@ -1,56 +1,35 @@
-.dummy{
-    padding-top: 7%;
-    text-align: left;
-  }
-  .emp-profile{
-    border-radius: 30px;
-    font-family: 'Lato', Arial, sans-serif;
-    font-size: 14px;
-    box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.27);
-    margin-left: 18%;
-    max-width: 80%;
-  }
-  
-  .titlename{
-    font-size: 30px;
-    color: #333;
-  }
-  
-  .fund-edit-btn{
+.fund-colm{
+  max-width: 40em;
+}
+
+.withdraw-btn{
+    color: rgba(0, 0, 0, 0.685);
+    transition: .2s all ease-in-out;
+    background-color: #ffffff;
     border: none;
-    border-radius: 5px;
-    width: 9em;
-    height: 3em;
-    padding: 10px;
-    font-weight: 600;
-    font-size: 20px;
-    background-color: #d8d8d8;
-    cursor: pointer;
-    margin-top: 8.5%;  
-    margin-right:7%;
-    float: right;
-  }
-  .details{
-    margin: 0%;
-  }
-  
-  .details label{
-    display: inline;
-    font-weight: 600;
-  }
-  .details p{
-    margin-left:10%;
-    font-weight: 600;
-    color: #797979;
-  }  
-  
-  .fund-profilepic{
-    width:300px;
-    padding:40px;
-    border-radius: 15%;
-  }
-  
-  .fund-colm{
-    max-width: 40em;
-  }
-  
+    outline:none;
+    padding: 0.75em 1.5em;
+    border-radius: 1em;
+}
+
+.withdraw-btn:hover{
+  background: #171A2B;
+  color: white;
+  box-shadow: 2px 3px 13px rgba(85, 85, 85, 0.644)
+}
+
+.withdraw-back {
+  background: #171A2B;
+  color: white;  
+  transition: .2s all ease-in-out;
+  border: none;
+  outline:none;
+  padding: 0.75em 1.5em;
+  border-radius: 3em;
+  float:left;
+  margin-left: 8em;
+}
+
+.withdraw-back:hover {
+  box-shadow: 2px 3px 13px rgba(85, 85, 85, 0.904)  
+}

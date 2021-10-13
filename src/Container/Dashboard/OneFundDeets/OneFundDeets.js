@@ -75,18 +75,18 @@ class OneFundDeets extends Component {
         }
       }
     redirectHandler= ()=> {
-        console.log('EVENT!!!')
+        console.log('EVENT!')
         this.props.history.push('/Donate');
     }
 
     redirectViewHandler= ()=> {
-        console.log('EVENT!!!')
+        console.log('EVENT!')
         this.props.history.push('/Dyte');
     }
     
     render(){
     let viewButton =(
-        <button class="fund-view-btn" name="btnAddMore" value="DONATE!" href="/dyte" onClick={() => this.redirectViewHandler()}>View Live Stream</button>
+        <button class="fund-view-btn" name="btnAddMore" value="DONATE!" href="/Dyte" onClick={() => this.redirectViewHandler()}>View Live Stream</button>
     )
     let donateButton =(
         <button class="fund-donate-btn" name="btnAddMore" value="DONATE!" href="/Donate" onClick={() => this.redirectHandler()}>DONATE NOW!</button>

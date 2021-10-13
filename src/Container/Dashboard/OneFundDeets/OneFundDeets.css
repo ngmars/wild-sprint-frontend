@@ -54,10 +54,13 @@
   padding: 1em;
   border-radius: 0.5em;
   margin-top: 45%;
+  transition: .2s all ease-in-out;
 }
 
 .fund-donate-btn:hover{
-  box-shadow: 2px 3px 13px rgba(153, 153, 153, 0.644)
+  box-shadow: 2px 3px 13px rgba(80, 80, 80, 0.794);
+  background: #171A2B;
+  color: white;
 }
 
 .each-fund {

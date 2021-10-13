@@ -126,7 +126,11 @@ class EventDonate extends Component{
             <p>PLEASE ENTER AN AMOUNT GREATER THAN 0</p>
         )
     }
-     }
+    }
+
+    RedirectBackHandler =() =>{
+      this.props.history.push('/oneFund');
+    }
      
     render(){
         let fundId = localStorage.getItem('eventId')
@@ -177,7 +181,7 @@ class EventDonate extends Component{
 
                     <div className="footer">
                         <div className='set'>
-                        <button className='back'>Back</button>
+                        <button className='back' onClick={this.RedirectBackHandler}>Back</button>
                         <button className='next' onClick={this.onFileUpload}>DONATE</button>                        
                     </div>
 

@@ -7,9 +7,9 @@
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
   font-weight: 400;
-  height: 100vh;
+  min-height: 100vh;
   justify-items: center;
-  width: 100vw;
+  max-width: 100vw;
 }
 
 .signup-container {
@@ -40,12 +40,13 @@
   font-weight: 600;
 }
 
-.right-container input {
+.right-container .pets-input {
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 4px;
   height: 38px;
   line-height: 38px;
   padding-left: 5px;
+  margin-bottom: 1em;
 }
 .right-container textarea {
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -54,7 +55,7 @@
   padding-left: 5px;
   height: 58px;
 }
-.right-container input, .right-container label {
+.right-container .pets-input, .right-container label {
   color: rgba(0, 0, 0, 0.8);
 }
 .right-container header {
@@ -90,6 +91,7 @@
 .right-container .footer .back:hover {
   background: #171A2B;
   color: white;
+  box-shadow: 2px 3px 13px rgba(85, 85, 85, 0.918);
 }
 
 
@@ -101,6 +103,7 @@
 }
 .right-container .footer .next:hover {
   background: #171A2B;
+  box-shadow: 2px 3px 13px rgba(85, 85, 85, 0.918);
 }
 
 .logo-1{

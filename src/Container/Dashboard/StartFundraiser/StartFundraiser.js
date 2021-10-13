@@ -2,13 +2,12 @@ import * as actions from '../../../store/Actions/Index';
 import {Redirect} from 'react-router-dom';
 import React, { Component } from 'react';
 import { Icon } from '@iconify/react';
-//import cameraRetro from '@iconify/icons-ion/camera';
 import { connect } from 'react-redux';
-import classes from './StartFundraiser.css'
+import './StartFundraiser.css';
 import FormData from 'form-data'; 
 import axios from 'axios';
 
-class startFundraiser extends Component{
+class StartFundraiser extends Component{
 
     state={
         name:null,
@@ -114,21 +113,21 @@ onFileUpload = () => {
        )
 
         return(
-            <div className='body signup-container'>
-              <div className='left-container'>
-                <h1>WILDSPRINT</h1>
-                <img src='/logo.png' alt="logo" className="logo-2"/>
+            <div className='body'>
+              <div className='signup-container-2'>
+                <div className='left-container'>
+                  <img src='/logo.png' alt="logo" className="logo-1"/>
               </div>
       
             <div className='right-container'>
-              <header>      
-                <h1> Take action towards saving the future!</h1><br/>
-      
+              <div className="header"> 
+                <h2> Your initiative saves the future!</h2>
+              </div>
                 <div className='set'>
-                  <div className='pets-name'>
-                    <label for='pets-name'>Fundraiser Name</label>
+                  <div className='pets-breed'>
+                    <label for='pets-breed'>Fundraiser Name</label>
                     <input
-                        id='pets-name'
+                        id='pets-breed'
                         className='pets-input'
                         placeholder="Fundraiser Name"
                         type='text'
@@ -139,10 +138,18 @@ onFileUpload = () => {
                   </div>
                 </div>
 
-                <div className="eventphoto">
-                  <input  id="upload" ref="upload"  name="image" type="file" accept="image/*"
-                        onChange={this.onFileChange}/>
-                  
+                <div className='set'>
+                  <div className='pets-breed'>
+                    <label for='pets-breed'>Cover picture</label>
+                    <input  
+                    id="upload" 
+                    className='upload-input'
+                    ref="upload"  
+                    name="image" 
+                    type="file" 
+                    accept="image/*"
+                    onChange={this.onFileChange}/>
+                  </div>
                 </div>
    
                 
@@ -225,7 +232,7 @@ onFileUpload = () => {
                     
                   </div>
                 </div>
-              </header>
+              
       
               <div className= "footer">
                 <div className='set'>
@@ -234,6 +241,7 @@ onFileUpload = () => {
                 </div>
               </div>
       
+            </div>
             </div>
           </div>     
         )
@@ -248,4 +256,4 @@ const mapSignInDispatchToProps =dispatch => {
     };
 };
 
-export default connect(null, mapSignInDispatchToProps)(startFundraiser);
+export default connect(null, mapSignInDispatchToProps)(StartFundraiser);

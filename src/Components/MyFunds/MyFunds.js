@@ -20,9 +20,6 @@ export default function MyFunds(props) {
         <img className="event-poster" src={imageUrl} />
         <div class='event-text'>
           <h6> {name} </h6>
-          <button
-          className="event-btn"
-          onClick= {() => redirectHandler(fundId)}>Learn More</button>
         </div>
       </div>
     </div>

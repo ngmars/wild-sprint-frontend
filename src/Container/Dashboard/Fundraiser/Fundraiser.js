@@ -17,6 +17,16 @@ class Myfunds extends Component {
         this.props.fetchMyFund(token,userId);
     };
 
+    redirectStartHandler= ()=> {
+        console.log('EVENT!')
+        this.props.history.push('/startfund');
+    }
+
+    redirectWithdrawHandler= ()=> {
+        console.log('EVENT!')
+        this.props.history.push('/withdraw');
+    }
+
     render(){
     //let eventsArr = this.props.events.events;
     //console.log(eventsArr.length,"THIS IS MAIN");
@@ -53,12 +63,12 @@ class Myfunds extends Component {
     }
 
     let buttonStartFundraiser =(
-        <button className="event-btn funds-btn" href="/StartFundForm">
+        <button className="event-btn funds-btn" onClick={() => this.redirectStartHandler()}>
         START FUNDRAISER
     </button>
     )
     let buttonWithdraw =(
-        <button className="event-btn funds-btn" href="/withdraw">
+        <button className="event-btn funds-btn" href="/withdraw" onClick={() => this.redirectWithdrawHandler()}>
         WITHDRAW FUNDS
     </button>
     )

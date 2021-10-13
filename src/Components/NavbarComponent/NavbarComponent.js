@@ -41,7 +41,7 @@ const NavbarComponent = ({location}) =>
               </div>
               <Nav.Link href="/events" className={location.pathname === '/events'?"nav-links-active":"nav-links" }>Events</Nav.Link>
               <Nav.Link href="/mybills" className={location.pathname === '/mybills'?"nav-links-active":"nav-links" } active={location.pathname === '/mybills'}>Bills</Nav.Link>
-              {role==='organiser'?<Nav.Link href="/fund" className={location.pathname === '/fund'?"nav-links-active":"nav-links" } active={location.pathname === '/fund'}>Fundraiser</Nav.Link>:null}
+              {role==='organiser'?<Nav.Link href="/fund" className={location.pathname === '/fund'?"nav-links-active":"nav-links" } active={location.pathname === '/fund'}>Fundraisers</Nav.Link>:null}
               <Nav.Link href="/gallery" className={location.pathname === '/gallery'?"nav-links-active":"nav-links" } active={location.pathname === '/gallery'}>Gallery</Nav.Link>                
             </Nav> 
 
