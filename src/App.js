@@ -10,7 +10,7 @@ import MyFund from './Container/Dashboard/Fundraiser/Fundraiser';
 import MyBills from './Container/Dashboard/MyBills/MyBills'
 import OneFundDeets from './Container/Dashboard/OneFundDeets/OneFundDeets';
 import DonateEvent from './Container/Dashboard/Donate/Donate';
-import Gallery from './Container/Dashboard/Gallery/Gallery';
+import GalleryComponent from './Container/Dashboard/GalleryComponent/GalleryComponent';
 import DyteMeet from './Container/Dashboard/Dyte/Dyte';
 import BlockChain from './Components/BlockChain';
 import WithdrawPage from './Container/Dashboard/Fundraiser/withdraw';
@@ -27,7 +27,7 @@ const App = ({ location }) => {
         <Route exact path="/login" component={Auth}/>
         <Route exact path="/events" component={Events}/>
         <Route exact path="/mybills" component={MyBills}/>
-        <Route exact path="/gallery" component={Gallery}/>
+        <Route exact path="/gallery" component={GalleryComponent}/>
           
         <Route exact path="/logout" component={Logout}/>
         <Route exact path="/profile" component={ProfileDisp}/>
