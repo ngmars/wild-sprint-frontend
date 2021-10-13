@@ -1,16 +1,13 @@
 import * as actions from '../../../store/Actions/Index';
 import axios from 'axios';
-import Spinner from '../../../Components/UI/Spinner/Spinner';
 import {Redirect} from 'react-router-dom';
-import Input from '../../../Components/UI/Input/Input';
-import Profile from '../../../Components/Profile/Profile';
-import EditProfile from '../../../Components/Profile/editProfile';
+import ProfileComponent from '../../../Components/ProfileComponent/ProfileComponent';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import FormData from 'form-data';
+import './Profile.css';
 
 class ProfileDisp extends Component{
-    
     state={
             isEditing:false,
             lastname:null,
@@ -19,20 +16,17 @@ class ProfileDisp extends Component{
             
     }
 
-    onFileChange = (event)=> { 
-  
+    onFileChange = (event)=> {   
         // Update the state 
-        this.setState({ selectedFile: event.target.files[0] }); 
-        
-        }; 
+        this.setState({ selectedFile: event.target.files[0] });         
+    }; 
 
-    
-    componentDidMount () {
-    
+    componentDidMount () {    
         let token = localStorage.getItem('token')
         let userId = localStorage.getItem('userId')
         this.props.onFetchEvents(token,userId);  
     };
+
     switchEditHandler =()=>{
         this.setState(prevState=>{
                 return {isEditing: !prevState.isEditing}
@@ -49,8 +43,7 @@ class ProfileDisp extends Component{
         })
     }
    
-    onFileUpload = () => { 
-  
+    onFileUpload = () => {  
         // Create an object of formData 
         const formData = new FormData(); 
         let token = localStorage.getItem('token')
@@ -78,8 +71,7 @@ class ProfileDisp extends Component{
                     'Content-Type': 'application/json'
                 }
             })
-            
-            
+
             this.props.onFetchEvents(token,userId); 
             this.setState(prevState=>{
                 return {isEditing: !prevState.isEditing}
@@ -88,10 +80,6 @@ class ProfileDisp extends Component{
     
         }; 
 
-
-
-    
-    
     render (){
         let name = this.props.name;
         let email = this.props.email;
@@ -107,93 +95,81 @@ class ProfileDisp extends Component{
                 isAuth = <Redirect to ='/'/>
             )
         }
-     
-       
+
         let profile;
         if (!this.state.isEditing){
-        profile =(<Profile
-                            name={name} 
-                            lastname={lastname}
-                            email={email}
-                            profession={profession}
-                            phone={phone}
-                            image ={image}
+            profile =(
+                <ProfileComponent
+                    name={name} 
+                    lastname={lastname}
+                    email={email}
+                    profession={profession}
+                    phone={phone}
+                    image ={image}    
                 />);
-            }else{
-
-                profile = (
-                    <div class="dummy">
-                    <div class="emp-profile">
-            <table>        
-            <tr>
-                <td class="colm">
-                    <img src={imageUrl} alt="" class="profilepic"/>
-                </td> 
-                <td class="colm">
-                    <h5 class="titlename">{name} {lastname}</h5>           
-                 
-                    <input  id="upload" ref="upload" class="details" name="image" type="file" accept="image/*"
-                        onChange={this.onFileChange}
-                         />
-                    <div class="details">     
-                        <table>
-                            <tr>
-                                <td><label>Email</label></td>
-                                <td><p>{email}</p></td>
-                            </tr>
-                            <tr>
-                                <td><label>First Name</label></td>
-                                <td><p>{name}</p></td>
-                            </tr>
-                            <tr>
-                                <td><label>Last Name</label></td>
-                                <td> <p><input
-                                            name='lastname'
-                                            placeholder={lastname}
-                                            value={this.state.lastname}
-                                            onChange={event => this.handleChange(event)}
-                                        />
-                                    </p> 
-                                </td>
-                            </tr>
-                            
-                            <tr>
-                                <td><label>Phone</label></td>
-                                <td><p>
+        }else{
+            profile = (
+                <div className="profile-comp">
+                    <div className="fill-details">
+                        <tr>
+                            <td>Email</td>
+                            <td>{email}</td>
+                        </tr>
+                        <tr>
+                            <td>First Name</td>
+                            <td>{name}</td>
+                        </tr>
+                        <tr>
+                            <td>Last Name</td>
+                            <td> <input
+                                        name='lastname'
+                                        placeholder={lastname}
+                                        value={this.state.lastname}
+                                        onChange={event => this.handleChange(event)}
+                                    />
+                                    
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Phone</td>
+                            <td>
                                 <input
-                                            name='phone'
-                                            type="text"
-                                            placeholder={phone}
-                                            value={this.state.phone}
-                                            pattern="[0-9]{10}"
-                                            onChange={event => this.handleChange(event)}
-                                        />
-                                </p></td>
-                            </tr>
-                                                       
-                        </table>                                 
+                                    name='phone'
+                                    type="text"
+                                    placeholder={phone}
+                                    value={this.state.phone}
+                                    pattern="[0-9]{10}"
+                                    onChange={event => this.handleChange(event)}
+                                />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Profile photo</td>
+                            <td>
+                                <input  id="upload" ref="upload" name="image" type="file" accept="image/*" onChange={this.onFileChange} />
+                            </td>
+                        </tr>                            
                     </div>                  
-                </td>   
-            </tr>
-            </table>
-    </div>
-    </div>
-                )}
-
-
-
+                    <img src={imageUrl} alt="" className="profilepic"/>
+                </div>
+            )
+        }
 
         let stateButton ;
-            if (!this.state.isEditing){ 
-        stateButton =( <input onClick={this.switchEditHandler}type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>)}
+        if (!this.state.isEditing){ 
+            stateButton= ( <input onClick={this.switchEditHandler} type="submit" className="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>)
+        }
         else{
-            stateButton =( <input onClick={this.onFileUpload}type="submit" class="profile-edit-btn" name="btnAddMore" value="Submit"/>)}
+            stateButton= ( <input onClick={this.onFileUpload}type="submit" className="profile-edit-btn" name="btnAddMore" value="Submit"/>)}
             
-        console.log('just the name, Im main',this.props.name)
+        console.log('This is profile name',this.props.name)
 
         return(
-            <div>
-                {profile}
+            <div className="profile">
+                <div className="intro">
+                    <h4 className="title-1 hover-underline-animation">Your Profile</h4>
+                </div>
+                {profile}<br/>
                 {stateButton}
                 {isAuth}
             </div>             

@@ -1,13 +1,58 @@
+.profile .intro{
+  text-align: center;
+}
+
+.fill-details{
+  text-align: left;
+  background: #ff872f;
+  color: #fff;
+  font-size: large;
+  font-family: 'Trocchi', serif;
+  width: fit-content;
+  height: fit-content;
+}
+
+.fill-details td{
+  padding: 1em;
+}
+
+.fill-details input{
+  border: none;
+  outline:none;
+  color: black;
+  max-height: max-content;
+  border-radius: 0.4em;
+}
+
+.fill-details input::-webkit-file-upload-button {
+  content: 'Choose a Photo';
+  border-radius: 3px;
+  padding: 5px 8px;
+  outline: none;
+  border: none;
+  white-space: nowrap;
+  cursor: pointer;
+  margin-bottom: 1em;
+  background: #fff;
+  color: black;
+  border-radius: 0.4em;
+}
+
 .profile-edit-btn{
   border: none;
-  border-radius: 3px;
+  border-radius: 5em;
   width: 9em;
   padding: 10px;
-  font-weight: 600;
   font-size: 16px;
-  color: #6c757d;
-  cursor: pointer;
-  float: right;
-  margin-top: -23%;  
-  margin-right:6%;
-  }
+  color: #fff;
+  background: #171A2B;
+  cursor: pointer;  
+  transition: .2s all ease-in-out;  
+  margin-left: 6em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.profile-edit-btn:hover{
+  box-shadow: 2px 3px 13px rgba(85, 85, 85, 0.918);
+}

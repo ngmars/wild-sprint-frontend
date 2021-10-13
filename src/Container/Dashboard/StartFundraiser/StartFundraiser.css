@@ -60,7 +60,6 @@
 
 .upload-input::-webkit-file-upload-button {
   content: 'Choose a Photo';
-  background: linear-gradient(top, #f9f9f9, #e3e3e3);
   border-radius: 3px;
   padding: 5px 8px;
   outline: none;
@@ -68,6 +67,6 @@
   white-space: nowrap;
   cursor: pointer;
   margin-bottom: 1em;
-  background: #ff862f;
+  background: #ff872f;
   color: #fff;
 }
