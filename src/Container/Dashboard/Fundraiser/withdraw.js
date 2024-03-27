@@ -1,19 +1,11 @@
-import * as actions from '../../../store/Actions/Index';
-import OneEvent from '../../../Components/oneEvent/oneEvent';
-import Spinner from '../../../Components/UI/Spinner/Spinner';
 import {Redirect} from 'react-router-dom';
-import Navbar from '../../../Components/Navbar/Navbar';
-import Sidebar from '../../../Components/SideBar/Sidebar';
 import React, { Component } from 'react';
-import classes from './withdraw.css';
-import { connect } from 'react-redux';
-import { Tabs, Tab } from 'react-bootstrap'
 import dBank from '../../../abis/dBank.json'
 import Token from '../../../abis/Token.json'
 import Web3 from 'web3';
-import logoPng from './logo.png'
+import './withdraw.css';
+
 class WithdrawPage extends Component {
-    
     async componentWillMount() {
         await this.loadBlockchainData(this.props.dispatch)
       }
@@ -103,87 +95,72 @@ class WithdrawPage extends Component {
           dBankAddress: null
         }
       }
+
+      RedirectBackHandler =() =>{
+        this.props.history.push('/fund');
+      }
     
     render(){
-    //let eventsArr = this.props.events.events;
-    //console.log(eventsArr.length,"THIS IS MAIN");
-    let sidebar = <Sidebar role = {localStorage.getItem('role')}/>;
-    let navbar =  <Navbar name ={localStorage.getItem('name')}/>;
     
     let oneEvent;
     
     console.log("NAME ON EVENTS PAGE",this.props.oneEvent)
     let withdrawButton =(
-        <button class="fund-edit-btn" name="btnAddMore" value="DONATE!"  onClick={(e) => this.withdraw(e)}>WITHDRAW</button>
+        <button className="withdraw-btn" name="btnAddMore"  onClick={(e) => this.withdraw(e)}>WITHDRAW</button>
     )
     oneEvent=(
-        <div class="dummy">
-
-        <div class="emp-profile">
-            <table>        
-                <tr>
-                <td class="colm">
-                    <img src={logoPng} alt="" class="profilepic"/>
-                </td> 
-                    <td class="fund-colm">
-                        <h5 class="titlename">Withdrawal Page</h5>           
-                        
-                    
-                        <div class="details">     
-                            <table>
-                                <tr>
-                                    <td><label>Account Number</label></td>
-                                    <td><p > {this.state.account0}</p></td>
-                                </tr>
-                                <tr>
-                                    <td><label>Account Funds</label></td>
-                                    <td><p id="id1"> </p></td>
-                                </tr>
-                                <tr>
-                                    <td><label>Withdrawn funds</label></td>
-                                    <td><p id="id2"> </p></td>
-                                </tr>
-                                <tr>
-                                    <td><label>Remaining Funds</label></td>
-                                    <td><p id="id3"> </p></td>
-                                </tr>
-                               {withdrawButton}
-                                                         
-                            </table>                                 
-                        </div>                  
-                    </td>   
-                </tr>
-            </table>
+      <>
+      <div className="intro">
+        <h5 className="title-1 hover-underline-animation">Withdrawal Page</h5>
+      </div>
+        <div className="">
+          <table>        
+            <tr>
+              <td className="colm">
+                <img src='/logo.png' alt="logo" className="profilepic"/>                
+              </td> 
+              <td className="fund-colm">                      
+                <div className="paragh-1">     
+                  <table>
+                    <tr>
+                        <td><label>Account Number</label></td>
+                        <td><p > {this.state.account0}</p></td>
+                    </tr>
+                    <tr>
+                        <td><label>Account Funds</label></td>
+                        <td><p id="id1"> </p></td>
+                    </tr>
+                    <tr>
+                        <td><label>Withdrawn funds</label></td>
+                        <td><p id="id2"> </p></td>
+                    </tr>
+                    <tr>
+                        <td><label>Remaining Funds</label></td>
+                        <td><p id="id3"> </p></td>
+                    </tr>
+                    {withdrawButton}
+                  </table>                                 
+                </div>                                  
+              </td>  
+            </tr> 
+            <button className='withdraw-back' onClick={this.RedirectBackHandler} href="/fund" >Back</button>           
+          </table>
         </div>
-    </div>
+      </>
     )
-    
-    
-    
-   
+
     let TokenExpRedirect = null
     if (!localStorage.getItem('token')){
         TokenExpRedirect =<Redirect to ='/'/>
     }
        
-        return(
-            <div>
-                {navbar}
-                {sidebar}                
-                
-                {oneEvent}
-                
-                {TokenExpRedirect}
-                
-                
-            </div>
-
-        )
-    }
+    return(
+      <>
+        {oneEvent}
+        {TokenExpRedirect}
+      </>
+    )
+  }
 }
-
-
-
-
 
 export default WithdrawPage;

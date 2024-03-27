@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Spinner from '../../Components/UI/Spinner/Spinner';
-import Input from '../../Components/UI/Input/Input';
-import Button from '../../Components/UI/Button/Button';
-import classes from './Auth.css';
 import {Redirect} from 'react-router-dom';
 import { Icon } from '@iconify/react';
+import Spinner from '../../Components/UI/Spinner/Spinner';
+import Input from '../../Components/UI/Input/Input';
+import './Auth.css';
 import lockCombination from '@iconify/icons-ion/lock-combination';
 import * as actions from '../../store/Actions/Index';
 
 class Auth extends Component {
+
     //Setting States
     state = {
+
         //Configure input fields for sign-in form
         controls_signIn: {
             email: {
@@ -111,6 +112,7 @@ class Auth extends Component {
         isSignIn:true,
    
     }
+
     //Validates all inputs
     checkValidity(value, rules) {
         let isValid = true;
@@ -142,6 +144,7 @@ class Auth extends Component {
 
         return isValid;
     }
+
     //Checks if an input has been entered in the text box
     inputChangedHandler = (event, controlName) => {
         
@@ -170,6 +173,7 @@ class Auth extends Component {
 
         }
     }
+
     //saves the input in the state and passes it on as props
     submitHandler = (event) => {
         if(this.state.isSignIn){
@@ -188,8 +192,6 @@ class Auth extends Component {
                 return {isSignIn: !prevState.isSignIn}
         })
     };
-   
-
 
     render () {
         
@@ -247,30 +249,30 @@ class Auth extends Component {
                 successMessage=(
                 <p className="SignUp-success">{this.props.success_signup}</p>
             )
+            }
         }
-    }
 
         //configuring error message based on if sigin or signup is the state
         let errorMessage = null;
         if(this.state.isSignIn){
             if(this.props.error_auth){
-             console.log("in main page",this.props.error_auth)
+                console.log("in main page",this.props.error_auth)
                 errorMessage=(
                 <p className="SignIn-error">{this.props.error_auth.message}</p>
                 );
-         }
+            }
         }else{
             if(this.props.error_signup){
                 console.log("in main page",this.props.error_signup)
-                   errorMessage=(
-                   <p className="SignIn-error">{this.props.error_signup.message}</p>
-                   );
-         }
+                    errorMessage=(
+                    <p className="SignIn-error">{this.props.error_signup.message}</p>
+                    );
+            }
         }
 
 
         //configuring submit button based on if sigin or signup is the state
-       let button=  (
+        let button=  (
             <button className='SignIn-button'>{this.state.isSignIn ? 'Log In': 'Sign Up'}</button>
         );
         
@@ -279,28 +281,24 @@ class Auth extends Component {
             <div className="logindark">
                 <form className="signin-form" onSubmit={this.submitHandler}>
                 <div className="illustration">
-                     <Icon className="illustration-lock" icon={lockCombination} />
-                 </div>
+                        <Icon className="illustration-lock" icon={lockCombination} />
+                    </div>
                     {form}
                     {button}
                     {spinner}
                     {successMessage}
                     {errorMessage}
                     <a className="forgot" >Forgot your password?</a>
-                     <button 
-                     onClick={this.switchAuthHandler}
-                     className="forgot-btn ">{this.state.isSignIn ? 'New user?Click here to sign up': 'Already have an account? Click Here'}</button>
+                        <a 
+                        onClick={this.switchAuthHandler}
+                        className="forgot">{this.state.isSignIn ? 'New user? Click here to sign up': 'Already have an account? Click Here'}</a>
                 </form>
                 {authRedirect}
             </div>
         );
-        
-        }
-
-    
+    }    
 }
     
-
 //To access the props sent 
 const mapSignInDispatchToProps =dispatch => {
   
@@ -310,7 +308,6 @@ const mapSignInDispatchToProps =dispatch => {
         onSignUp:(email,name,password,confpassword)=>dispatch(actions.SignUp(email,name,password,confpassword))
     };
 }
-
 
 //to access the errors and loading state 
 const mapStatetoProps = state =>{
@@ -325,6 +322,4 @@ const mapStatetoProps = state =>{
     };
 };
 
-
 export default connect(mapStatetoProps, mapSignInDispatchToProps)(Auth);
-

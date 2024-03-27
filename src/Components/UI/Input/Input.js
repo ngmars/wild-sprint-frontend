@@ -1,5 +1,4 @@
 import React from 'react';
-
 import classes from './input.css';
 
 const input = ( props ) => {

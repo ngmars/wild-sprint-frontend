@@ -1,0 +1,27 @@
+.profile-comp{
+  display: inline-flex;
+  margin-top: 3em;
+  margin-left: 7em;
+  width: fit-content;
+}
+
+.details{
+  text-align: left;
+  background: #ff872f;
+  color: #fff;
+  font-size: large;
+  font-family: 'Trocchi', serif;
+  width: fit-content;
+  min-height: 50vh;
+}
+
+.details td{
+  padding: 1em;
+}
+
+.profilepic{
+  height: 60vh;
+  margin-left:1em;
+  background-color: #fff;
+  padding: 2em;
+}

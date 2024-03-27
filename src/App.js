@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
-
+import {Switch, Route, Redirect, withRouter} from "react-router-dom";
 import Auth from'./Container/Auth/Auth';
 import CreateFundraiser from './Container/Dashboard/StartFundraiser/StartFundraiser';
 import Logout from'./Container/Auth/Logout/Logout';
@@ -10,66 +10,39 @@ import MyFund from './Container/Dashboard/Fundraiser/Fundraiser';
 import MyBills from './Container/Dashboard/MyBills/MyBills'
 import OneFundDeets from './Container/Dashboard/OneFundDeets/OneFundDeets';
 import DonateEvent from './Container/Dashboard/Donate/Donate';
-import Gallery from './Container/Dashboard/Gallery/Gallery';
+import GalleryComponent from './Container/Dashboard/GalleryComponent/GalleryComponent';
 import DyteMeet from './Container/Dashboard/Dyte/Dyte';
 import BlockChain from './Components/BlockChain';
 import WithdrawPage from './Container/Dashboard/Fundraiser/withdraw';
-import {BrowserRouter as Router,Switch, Route} from "react-router-dom";
-import {Provider} from 'react-redux';
+import NavbarComponent from './Components/NavbarComponent/NavbarComponent';
 
-class App extends Component {
-  render () {
-  return (
+const App = ({ location }) => {
 
-    <div className="App">
-    <Router>
-      <Switch>
-        <Route path="/" exact component={Auth}/>
+    return (
+      <div className="App">    
+        {location.pathname !== '/login' && location.pathname !== '/Dyte' && <NavbarComponent/>}  
 
-        </Switch>
         <Switch>
-        <Route path="/events" exact component={Events}/>
+        <Route exact path="/" render={() => <Redirect to="/login"/>} />
+        <Route exact path="/login" component={Auth}/>
+        <Route exact path="/events" component={Events}/>
+        <Route exact path="/mybills" component={MyBills}/>
+        <Route exact path="/gallery" component={GalleryComponent}/>
+          
+        <Route exact path="/logout" component={Logout}/>
+        <Route exact path="/profile" component={ProfileDisp}/>
+        <Route exact path="/fund" component={MyFund}/>
+        <Route exact path="/startfund" component={CreateFundraiser}/>
+        <Route exact path="/onefund" component={OneFundDeets}/>
+        <Route exact path="/donate" component={DonateEvent}/>
+        
+        
+        <Route exact path="/dyte" component={DyteMeet}/>
+        <Route exact path="/blockchain" component={BlockChain}/>
+        <Route exact path="/withdraw" component={WithdrawPage}/>
         </Switch>
-        <Switch>
-        <Route path="/logout" exact component={Logout}/>
-        </Switch>
-        <Switch>
-        <Route path="/profile" exact component={ProfileDisp}/>
-        </Switch>
-        <Switch>
-        <Route path="/fund" exact component={MyFund}/>
-        </Switch>
-        <Switch>
-        <Route path="/StartFundForm" exact component={CreateFundraiser}/>
-        </Switch>
-      <Switch>
-        <Route path="/oneFund" exact component={OneFundDeets}/>
-      </Switch>
-      <Switch>
-        <Route path="/Donate" exact component={DonateEvent}/>
-      </Switch>
-      <Switch>
-        <Route path="/MyBills" exact component={MyBills}/>
-      </Switch>
-      <Switch>
-      <Route path="/Gallery" exact component={Gallery}/>
-      </Switch>
-      <Switch>
-      <Route path="/Dyte" exact component={DyteMeet}/>
-      </Switch>
-      <Switch>
-      <Route path="/blockchain" exact component={BlockChain}/>
-      </Switch>
-      <Switch>
-      <Route path="/withdraw" exact component={WithdrawPage}/>
-      </Switch>
-    </Router>
-    
-
-    </div>
-
-  );
-};
+      </div>
+    );
 }
 
-export default App;
+export default withRouter(App);

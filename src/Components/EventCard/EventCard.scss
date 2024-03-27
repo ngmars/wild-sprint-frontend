@@ -1,0 +1,45 @@
+.event-box {
+  width: 24vw;
+  height: auto;
+  padding: 2em;
+  margin: 5vh;
+  border-radius: 1em;
+  background: #e3eee2;
+  box-shadow:  9px 9px 18px #d3ddd2,
+              -9px -9px 18px #f3fff2;
+}
+
+.event-text {
+  width: 90%;
+  height: auto;
+  margin: auto;
+  text-align: center;
+  padding: 1.5em;
+  border-radius: 1em;
+  background-color: #f8f9fa;
+}
+
+.event-text h6{
+  line-height: 25px;
+}
+
+.event-poster{
+  border-radius: 1em;
+  margin: auto;
+  margin-bottom: 1em;
+}
+
+.event-btn{
+  color: #ffffff;
+  background-color: #ff862f;
+  border: none;
+  outline:none;
+  padding: 0.75em 1.5em;
+  border-radius: 1em;
+  transition: .2s all ease-in-out;
+}
+
+.event-btn:hover{
+  box-shadow: 2px 3px 13px rgba(85, 85, 85, 0.918);
+  background: #171A2B;
+}

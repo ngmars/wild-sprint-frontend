@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import Token from '../abis/Token.json'
 import dbank from '../dbank.png';
 import Web3 from 'web3';
-import './App.css';
+import './Blockchain.css';
 
 class BlockChain extends Component {
 
